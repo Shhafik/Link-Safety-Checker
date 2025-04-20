@@ -2,6 +2,20 @@ async function checkURL() {
     const url = document.getElementById('urlInput').value;
     const resultDiv = document.getElementById('result');
     resultDiv.textContent = 'Checking...';
+
+    const cors = require('cors');
+const express = require('express');
+const app = express();
+
+// 👇 CORS config here
+const allowedOrigins = ['https://link-backend-ethn.vercel.app'];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  credentials: true,
+}));
+
   
     try {
       const response = await fetch('https://link-backend-murex.vercel.app/check', {
