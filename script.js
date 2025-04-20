@@ -4,7 +4,7 @@ async function checkURL() {
     resultDiv.textContent = 'Checking...';
   
     try {
-      const response = await fetch('https://shhafik.github.io/link_backend/check', {
+      const response = await fetch('https://link-backend-murex.vercel.app/check', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
